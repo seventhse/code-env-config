@@ -1,2 +1,4 @@
-# code-env-config
-VsCode user config
+# Development environment configuration based on MacOS
+
+- vscode setting
+- KarabinerElements
