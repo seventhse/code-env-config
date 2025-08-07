@@ -16,7 +16,8 @@
   "files.watcherExclude": {
     "**/node_modules/**": true,
     "**/dist/**": true,
-    "**/.git/**": true
+    "**/.git/**": true,
+    "**/target/**": true
   },
   "search.exclude": {
     "**/.git": true,
@@ -122,13 +123,36 @@
     "*.vue": "$(capture).*.ts, $(capture).*.js, $(capture).story.vue",
     "*.xaml": "$(capture).xaml.cs"
   },
-  // Vim
+  // Word check ignore
+  "cSpell.userWords": [
+    "ahooks",
+    "autofetch",
+    "demi",
+    "easymotion",
+    "foldfix",
+    "hlsearch",
+    "incsearch",
+    "jiqi",
+    "nohl",
+    "nuxt",
+    "Panzoom",
+    "rustup",
+    "Seventhse",
+    "Tauri",
+    "unref",
+    "Vitesse",
+    "Vuex"
+  ],
+  // Vim keymap
   "vim.easymotion": true,
   "vim.incsearch": true,
   "vim.useSystemClipboard": true,
+  "vim.overrideCopy": false,
   "vim.hlsearch": true,
   "vim.foldfix": true,
   "vim.leader": "<space>",
+  "vim.smartRelativeLine": true,
+  "editor.lineNumbers": "relative",
   "vim.handleKeys": {
     "<C-a>": false,
     "<C-f>": false
@@ -208,20 +232,11 @@
     },
     {
       "before": [
-        "s",
-        "r"
-      ],
-      "commands": [
-        "workbench.action.splitEditor"
-      ]
-    },
-    {
-      "before": [
         "f",
         "c"
       ],
       "commands": [
-        "workbench.files.action.showActiveFileInExplorer"
+        "workbench.files.action.focusFilesExplorer"
       ],
       "when": [
         "openEditors"
@@ -287,15 +302,6 @@
     {
       "before": [
         "g",
-        "v"
-      ],
-      "commands": [
-        "gitlens.showGraph"
-      ]
-    },
-    {
-      "before": [
-        "g",
         "p"
       ],
       "commands": [
@@ -325,26 +331,6 @@
       "when": "editorTextFocus && !editorReadonly"
     }
   ],
-  // Word check ignore
-  "cSpell.userWords": [
-    "ahooks",
-    "autofetch",
-    "demi",
-    "easymotion",
-    "foldfix",
-    "hlsearch",
-    "incsearch",
-    "jiqi",
-    "nohl",
-    "nuxt",
-    "Panzoom",
-    "rustup",
-    "Seventhse",
-    "Tauri",
-    "unref",
-    "Vitesse",
-    "Vuex"
-  ],
   // License
   "license.author": "Seventhse",
   "license.year": "auto",
@@ -355,13 +341,12 @@
   "git.autofetch": false,
   "git.replaceTagsWhenPull": true,
   "extensions.experimental.affinity": {
-    "vscodevim.vim": 1
+    "vscodevim.vim": 1,
+    "asvetliakov.vscode-neovim": 1
   },
   // Terminal
   "terminal.integrated.env.osx": {
     "FIG_NEW_SESSION": "1",
-    "CW_NEW_SESSION": "1",
-    "Q_NEW_SESSION": "1"
   },
   "terminal.integrated.fontSize": 15,
   // Debug
@@ -430,8 +415,8 @@
     "source.removeUnused.ts": "never",
     "source.organizeLinkDefinitions": "never",
     "source.fixAll.ts": "never",
-    "source.sortImports": "never",
-    "source.organizeImports": "never",
+    "source.sortImports": "explicit",
+    "source.organizeImports": "explicit",
     "source.fixAll.eslint": "explicit",
   },
   "editor.stickyScroll.enabled": false,
@@ -453,6 +438,7 @@
   "workbench.startupEditor": "none",
   "workbench.sideBar.location": "right",
   "workbench.colorTheme": "Vitesse Dark",
+  "workbench.editor.empty.hint": "hidden",
   "workbench.colorCustomizations": {
     "[Vitesse Light]": {
       "list.focusBackground": "#f7f7f7"
@@ -481,7 +467,7 @@
     }
   },
   "[vue]": {
-    "editor.defaultFormatter": "Vue.volar",
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
     "editor.codeActionsOnSave": {
       "source.fixAll.eslint": "explicit"
     }
@@ -492,14 +478,34 @@
       "source.fixAll.eslint": "explicit"
     }
   },
-  "typescript.updateImportsOnFileMove.enabled": "always",
   "[html]": {
     "editor.defaultFormatter": "vscode.html-language-features"
   },
   "[javascript]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "[css]": {
     "editor.defaultFormatter": "vscode.css-language-features"
-  }
+  },
+  "[shellscript]": {
+    "editor.defaultFormatter": "mads-hartmann.bash-ide-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+  },
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer"
+  },
+  "[mdx]": {
+    "editor.defaultFormatter": "unifiedjs.vscode-mdx"
+  },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "[lua]": {
+    "editor.defaultFormatter": "sumneko.lua"
+  },
+  // Features
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "security.promptForRemoteFileProtocolHandling": false,
 }

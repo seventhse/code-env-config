@@ -1,4 +1,3 @@
-// 将键绑定放在此文件中以覆盖默认值auto[]
 [
   // --- 资源管理器中对文件或目录的操作
   // 新建文件
@@ -15,13 +14,13 @@
   },
   // 刷新资源管理器
   {
-    "key": "r",
+    "key": "cmd+r",
     "command": "workbench.files.action.refreshFilesExplorer",
     "when": " explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus "
   },
   // 重命名文件或目录
   {
-    "key": "a",
+    "key": "r",
     "command": "renameFile",
     "when": " explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus "
   },
@@ -75,7 +74,7 @@
     "command": "workbench.action.switchWindow"
   },
   {
-    "key": "cmd+`",
+    "key": "cmd+j",
     "command": "workbench.action.terminal.toggleTerminal",
     "when": "terminal.active"
   },
@@ -88,14 +87,6 @@
     "command": "workbench.action.nextEditor"
   },
   {
-    "key": "cmd+j",
-    "command": "-workbench.action.togglePanel"
-  },
-  {
-    "key": "cmd+j",
-    "command": "workbench.action.closePanel"
-  },
-  {
     "key": "alt+x",
     "command": "workbench.view.scm",
     "when": "workbench.scm.active && !gitlens:disabled && config.gitlens.keymap == 'chorded'"
@@ -111,23 +102,18 @@
     "when": "workbench.scm.active"
   },
   {
-    "key": "ctrl+shift+g",
+    "key": "shift+cmd+g",
     "command": "-workbench.view.scm",
     "when": "workbench.scm.active"
   },
   {
-    "key": "shift+cmd+j",
+    "key": "shift+cmd+b",
     "command": "-workbench.action.search.toggleQueryDetails",
     "when": "inSearchEditor || searchViewletFocus"
   },
   {
     "key": "shift+cmd+j",
     "command": "editor.action.copyLinesDownAction",
-    "when": "editorTextFocus && !editorReadonly"
-  },
-  {
-    "key": "shift+alt+down",
-    "command": "-editor.action.copyLinesDownAction",
     "when": "editorTextFocus && !editorReadonly"
   }
 ]
