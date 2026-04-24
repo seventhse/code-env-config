@@ -1,0 +1,74 @@
+{
+  "title": "Safari Tab Group next/prev (vim-like)",
+  "rules": [
+    {
+      "description": "Ctrl+Option h/j/k/l switch Safari Tab Groups (frontmost only)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": ["^com\\.apple\\.Safari$"]
+            }
+          ],
+          "from": {
+            "key_code": "j",
+            "modifiers": { "mandatory": ["control", "option"] }
+          },
+          "to": [
+            { "key_code": "down_arrow", "modifiers": ["command", "option"] }
+          ]
+        },
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": ["^com\\.apple\\.Safari$"]
+            }
+          ],
+          "from": {
+            "key_code": "k",
+            "modifiers": { "mandatory": ["control", "option"] }
+          },
+          "to": [
+            { "key_code": "up_arrow", "modifiers": ["command", "option"] }
+          ]
+        },
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": ["^com\\.apple\\.Safari$"]
+            }
+          ],
+          "from": {
+            "key_code": "h",
+            "modifiers": { "mandatory": ["control", "option"] }
+          },
+          "to": [
+            { "key_code": "open_bracket", "modifiers": ["command", "shift"] }
+          ]
+        },
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": ["^com\\.apple\\.Safari$"]
+            }
+          ],
+          "from": {
+            "key_code": "l",
+            "modifiers": { "mandatory": ["control", "option"] }
+          },
+          "to": [
+            { "key_code": "close_bracket", "modifiers": ["command", "shift"] }
+          ]
+        }
+      ]
+    }
+  ]
+}
